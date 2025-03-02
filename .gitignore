@@ -1,0 +1,9 @@
+# developer tools
+.vscode
+
+# macOS
+.DS_Store
+
+# environments
+.venv/
+.q_gates_env/
