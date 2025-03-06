@@ -1,0 +1,35 @@
+shor_algo:
+    type: Article
+    title: "Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer"
+    author: Shor, Peter W.
+    serial-number:
+        doi: "10.1137/S0097539795293172"
+    page-range: 1484-1509
+    date: 1997
+    parent:
+        title: SIAM Journal on Computing
+        volume: 26
+        issue: 5
+
+qubits:
+    type: Article
+    title: Quantum coding
+    author: Schumacher, Benjamin
+    serial-number:
+        doi: "10.1103/PhysRevA.51.2738"
+    page-range: 2738-2747
+    date: 1995-04
+    parent:
+        title: Physical Review A
+        volume: 51
+        issue: 4
+
+quantum_textbook:
+    type: Book
+    title: "Quantum Computation and Quantum Information: 10th Anniversary Edition"
+    author: ["Nielsen, M. A.", "Chuang I. L."]
+    serial-number:
+        doi: "10.1017/CBO9780511976667"
+    date: 2010-09
+    publisher: Cambridge University Press
+    location: Cambridge
