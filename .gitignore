@@ -5,5 +5,4 @@
 .DS_Store
 
 # environments
-.venv/
-.q_gates_env/
+Pipfile.lock
