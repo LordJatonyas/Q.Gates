@@ -1,20 +1,21 @@
 #import "@preview/physica:0.9.4": ket
 
 = Introduction
-Technology has been a steadfast pillar supporting humanity's progress, developing recursively, building upon generations of inventions and discoveries to solve ever more challenging problems. Well into the Silicon Age, tasks ranging from mundane automation to artificial intelligence like ChatGPT, DeepSeek, Grok have become possible. Yet, for all the progress in the field of computing to date, there remain problems that are intractable for classical computing systems, such as breaking public-key cryptography schemes #cite(<shor_algo>).
-
-This limit stems from the classical bit being constrained to either 0 or 1. Considering a superset of decimal values bounded by 0 and 1 (inclusive), the classical system falls short in terms of its information encoding capacity. Exploiting this superset would tremendously increase the system's computational power, making it feasible to solve a whole new class of problems.
 
 == Age of Quantum Computing
-To access this superset, a new kind of computer is required. It is to be built with quantum bits or qubits #cite(<qubits>) which, unlike classical bits, can be described by linear combinations of two orthogonal vectors $ket(0) = vec(1, 0)$ and $ket(1) = vec(0, 1)$:
+Classical computing is fundamentally limited in computational power due to the binary constraint on the bit (0 or 1). Compared to a superset of values between 0 and 1 (inclusive), current computing falls utterly short in its information encoding capacity. As a result, for all the progress made in the field of computing to date, there remain problems that are intractable for these systems, such as the task of breaking public-key cryptography schemes #cite(<shor_algo>).
+
+The creation of quantum computers promises solutions to these problems by changing the information unit from the bit to the quantum bit or qubit #cite(<qubits>). Unlike a classical bit, a qubit $ket(psi)$ can be described by a linear combination of two orthogonal vectors $ket(0) = vec(1, 0)$ and $ket(1) = vec(0, 1)$:
 
 #align(center)[$ket(psi) = alpha ket(0) + beta ket(1)$]
 
-where $alpha$ and $beta$ are the complex probability amplitudes subject to the $abs(alpha)^2 + abs(beta)^2 = 1$ constraint #cite(<quantum_textbook>). This is a consequence of quantum mechanical superposition, in which the system can exist in multiple states simultaneously rather than being confined to a single definite state.
+where $alpha$ and $beta$ are the  probability amplitudes subject to the $abs(alpha)^2 + abs(beta)^2 = 1$ constraint #cite(<quantum_textbook>). This is a consequence of quantum mechanical superposition, in which the system can exist in multiple states simultaneously rather than being confined to a single definite state. This unlocks an extraordinary increase in computational power. To put this into perspective, $N$ qubits can hold as much information as $2^N$ classical bits.
 
-Architectures available right now. This thesis focuses on electrostatically-defined quantum dot devices. 
+Many implementations have been proposed to realise this power, one of them being the quantum dot. Quantum dots were first introduced as a way to ... Ekimov 1981
 
-Google Willow, IBM, Rigetti, IONQ.
+This thesis focuses on electrostatically-defined quantum dot devices. 
+
+Technology develops recursively, building upon generations of discoveries and inventions to refine solutions or solve ever challenging problems. As the benefits of quantum computing become increasingly well-understood, more effort has been poured into creating better quantum computers. Google Willow, IBM, Rigetti, IONQ.
 
 
 == Electrostatically-defined quantum dot devices
@@ -24,6 +25,10 @@ Google Willow, IBM, Rigetti, IONQ.
 
 == Machine Learning
 === Multi-Agent Reinforcement Learning (MARL)
+=== Deep Q Learning
+=== Proximal Policy Optimisation (PPO)
+=== Group Relative Policy Optimisation (GRPO)
+
 
 lorem ipsum lorem ipsum
 

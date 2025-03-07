@@ -25,7 +25,7 @@
 
 #set heading(numbering: "1.1")
 #show heading: it => [
-  #set par(leading: 0.5em, spacing: 0.5em)
+  #set par(leading: 0.5em, spacing: 1.5em)
   #counter(heading).display()
   #it.body
 ]
