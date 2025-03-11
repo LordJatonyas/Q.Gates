@@ -37,15 +37,14 @@ def orientation(k, y_range, x_range, separation):
     r_max_vert = 0
     # Loop over columns
     for j in range(y_range):
-        rectangle = list()
+        rectangle = np.array([])
         for i in range(x_range):
             # Detect presence of gate
             if separation[i,j,k] != 1.:
                 # Create strip
-                rectangle.append([i,j])
+                np.append(rectangle, [i,j])
         if len(rectangle) != 0:
             horizontal += 1
-            rectangle = np.array(rectangle)
             r_max_vert = max(r_max_vert, rectangle.shape[0])
     vertical = 1 * (horizontal <= r_max_vert)
     return vertical

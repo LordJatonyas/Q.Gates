@@ -17,7 +17,6 @@ from scipy.signal import find_peaks
 from skimage.segmentation import flood_fill
 import copy
 from multiprocessing import Pool
-import multiprocessing
 import pickle
 from imageio.v2 import imread
 
@@ -875,12 +874,6 @@ def get_physical_density(geometry,var_volt=0):
     #pp.gate_volt = np.array([3500,1360,1513,1201,3500,1330,3506,910,2686,1080])
     pp.gate_volt = np.array(var_volt)
     
-    """
-    current = multiprocessing.current_process()
-    created = multiprocessing.Process()
-    ID = created._identity
-    num = ID[0]+(ID[1]-1)*10
-    """
     results = pp.main(potential)
     
     t3 = time.time()

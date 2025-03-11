@@ -15,7 +15,8 @@ Many methods have been proposed to realise this power, such as superconducting, 
         image("images/single_quantum_dot.svg", width: 75%),
         image("images/double_quantum_dot.svg", width: 90%),
     ),
-    caption: [Double QD circuit diagram],
+    caption: 
+        [Networks of tunnel resistors and capacitors representing single quantum dot (upper panel) and double quantum dot (lower panel).],
 )
 
 In practice, suitable gate layouts are designed experimentally to achieve desired QDs. This has led to wide differences in geometry, positioning, number of gates, and gate potentials among existing quantum dot devices. The diversity has been helpful in demonstrating the design possibilities, but limits reproducibility and scalability, aspects that will be important as quantum computing matures. Working towards the goal of standardisation, this thesis investigates the use of #emph[*physics-based reinforcement learning to optimally design simple geometry gate electrode layouts*].

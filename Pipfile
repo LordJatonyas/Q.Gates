@@ -11,3 +11,6 @@ numpy = "==1.23.5"
 numba = "==0.56.4"
 scikit-image = "==0.19.3"
 matplotlib = "*"
+ipykernel = "*"
+
+[dev-packages]

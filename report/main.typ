@@ -10,6 +10,19 @@
   #it.body
 ]
 
+#show figure.caption: it => {
+  set align(left)
+  set par(justify: true)
+  it
+}
+#let in-outline = state("in-outline", false)
+#show outline: it => {
+  in-outline.update(true)
+  it
+  in-outline.update(false)
+}
+#let flex-caption(long, short) = context if in-outline.get() { short } else { long }
+
 // Preface (Abstract + Acknowledgements)
 #set page(numbering: "i")
 #counter(page).update(1)
@@ -17,9 +30,8 @@
 // #include "acknowledgements.typ"
 #outline(indent: auto, depth: 2)
 
-= List of Figures
 #outline(
-  title: none,
+  title: [List of Figures],
   target: figure,
 )
 
@@ -31,10 +43,10 @@
 ]
 #set page(numbering: "1")
 #counter(page).update(1)
-#include "introduction.typ"
-#include "lit-review.typ"
-#include "methodology.typ"
-#include "simulations.typ"
+#include "introduction.typ" // 2 pages
+#include "lit-review.typ" // 8 - 10 pages
+#include "methodology.typ" // 15 - 20 pages
+#include "simulations.typ" // 8 - 10 pages
 
 #counter(heading).update(7)
 #bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers")
