@@ -32,5 +32,9 @@
 #set page(numbering: "1")
 #counter(page).update(1)
 #include "introduction.typ"
+#include "lit-review.typ"
+#include "methodology.typ"
+#include "simulations.typ"
 
+#counter(heading).update(7)
 #bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers")

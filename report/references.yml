@@ -33,3 +33,15 @@ quantum_textbook:
     date: 2010-09
     publisher: Cambridge University Press
     location: Cambridge
+
+gate_controlled_qd:
+    type: Article
+    title: Gate-Controlled Quantum Dots Based on 2D Materials
+    author: ["Jing, Fang-Ming", "Zhang, Zhuo-Zhi", "Qin, Guo-Quan", "Luo, Gang", "Cao, Gang", "Li, Hai-Ou", "Song, Xiang-Xiang", "Guo, Guo-Ping"]
+    serial-number:
+        doi: "10.1002/qute.202100162"
+    date: 2022
+    parent:
+        title: Advanced Quantum Technologies
+        volume: 5
+        issue: 6
