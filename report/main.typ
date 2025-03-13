@@ -10,18 +10,11 @@
   #it.body
 ]
 
+// Figure captions
 #show figure.caption: it => {
-  set align(left)
   set par(justify: true)
   it
 }
-#let in-outline = state("in-outline", false)
-#show outline: it => {
-  in-outline.update(true)
-  it
-  in-outline.update(false)
-}
-#let flex-caption(long, short) = context if in-outline.get() { short } else { long }
 
 // Preface (Abstract + Acknowledgements)
 #set page(numbering: "i")
@@ -43,6 +36,9 @@
 ]
 #set page(numbering: "1")
 #counter(page).update(1)
+
+
+
 #include "introduction.typ" // 2 pages
 #include "lit-review.typ" // 8 - 10 pages
 #include "methodology.typ" // 15 - 20 pages
