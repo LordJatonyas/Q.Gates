@@ -24,6 +24,19 @@ qubits:
         volume: 51
         issue: 4
 
+ekimov-semiconductor:
+    type: Article
+    title: Quantum Size Effect in Semiconductor Microcrystals
+    author: ["Ekimov, A. I.", "Efros, Al. L.", "Onushchenko, A. A."]
+    serial-number:
+        doi: "10.1016/S0038-1098(85)80025-9"
+    page-range: 921-924
+    date: 1985-09
+    parent:
+        title: Solid State Communications
+        volume: 56
+        issue: 11
+
 quantum_textbook:
     type: Book
     title: "Quantum Computation and Quantum Information: 10th Anniversary Edition"
