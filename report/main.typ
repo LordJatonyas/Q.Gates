@@ -20,7 +20,7 @@
 #set page(numbering: "i")
 #counter(page).update(1)
 #include "abstract.typ"
-// #include "acknowledgements.typ"
+#include "acknowledgements.typ"
 #outline(indent: auto, depth: 2)
 
 #outline(
@@ -35,6 +35,7 @@
   #it.body
 ]
 #set page(numbering: "1")
+#set math.equation(numbering: "(1.1)")
 #counter(page).update(1)
 
 
@@ -44,5 +45,6 @@
 #include "methodology.typ" // 15 - 20 pages
 #include "simulations.typ" // 8 - 10 pages
 
-#counter(heading).update(7)
+#pagebreak()
+#counter(heading).update(5)
 #bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers")

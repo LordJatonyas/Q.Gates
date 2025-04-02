@@ -1,4 +1,4 @@
 = QD Simulations
 == DQN
 == PPO
-== GRPO
+== Q-MARL

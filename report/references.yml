@@ -80,3 +80,14 @@ gate_controlled_qd:
         title: Advanced Quantum Technologies
         volume: 5
         issue: 6
+
+nanofabrication-GaAs:
+    type: Article
+    title: Nanofabrication of Gate-defined GaAs/AlGaAs Lateral Quantum Dots
+    author: ["Bureau-Oxton, Chloe", "Lemyre, Julien", "Pioro-Ladriere, Michel"]
+    serial-number:
+        doi: "10.3791/50581"
+    date: 2013-11
+    parent:
+        title: Journal of Visualized Experiments
+        issue: 81
