@@ -11,6 +11,28 @@ shor_algo:
         volume: 26
         issue: 5
 
+qubit-count:
+    type: Article
+    title: "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits"
+    author: ["Gidney, Craig", "Ekera, Martin"]
+    serial-number:
+        doi: "10.22331/q-2021-04-15-433"
+    page-range: 433
+    date: 2021-04
+    parent:
+        title: Quantum
+        volume: 5
+
+spin-qubits:
+    type: Article
+    title: "Quantum Dots / Spin Qubits"
+    author: Harvey, Shannon
+    serial-number:
+        doi: "10.1093/acrefore/9780190871994.013.83"
+    date: 2022-02
+    parent:
+        title: Oxford Research Encyclopedia of Physics
+
 qubits:
     type: Article
     title: Quantum coding
