@@ -91,3 +91,11 @@ nanofabrication-GaAs:
     parent:
         title: Journal of Visualized Experiments
         issue: 81
+
+sutton_barto:
+    type: Book
+    title: "Reinforcement Learning: An Introduction"
+    author: ["Sutton, R. S.", "Barto, A. G."]
+    date: 2018
+    publisher: A Bradford Book
+    location: Cambridge, MA, USA

@@ -21,8 +21,9 @@
 #counter(page).update(1)
 #include "abstract.typ"
 #include "acknowledgements.typ"
-#outline(indent: auto, depth: 2)
 
+#outline(indent: auto, depth: 2)
+#pagebreak()
 #outline(
   title: [List of Figures],
   target: figure,
