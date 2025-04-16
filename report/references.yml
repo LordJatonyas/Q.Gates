@@ -99,3 +99,19 @@ sutton_barto:
     date: 2018
     publisher: A Bradford Book
     location: Cambridge, MA, USA
+
+marl:
+    type: Book
+    title: "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches"
+    author: ["Albrecht, Stefano", "Christianos, Filippos", "Schafer, Lukas"]
+    date: 2024
+    publisher: MIT Press
+    location: Cambridge, MA, USA
+
+mal:
+    type: Article
+    title: Comparative Evaluation of Multiagent Learning Algorithms in a Diverse Set of Ad Hoc Team Problems
+    author: ["Albrecht, Stefano", "Ramamoorthy, Subramanian"]
+    serial-number:
+        doi: "10.48550/arXiv.1907.09189"
+    date: 2019

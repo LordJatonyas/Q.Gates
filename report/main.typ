@@ -41,10 +41,12 @@
 
 
 
-#include "introduction.typ" // 2 pages
-#include "lit-review.typ" // 8 - 10 pages
-#include "methodology.typ" // 15 - 20 pages
+#include "introduction.typ" // 1 - 2 pages
+#include "lit-review.typ" // 12 - 14 pages
+#include "methodology.typ" // 12 - 15 pages
 #include "simulations.typ" // 8 - 10 pages
+#include "discussion.typ" // 6 - 8 pages
+#include "conclusion.typ" // 2 - 3 pages
 
 #pagebreak()
 #counter(heading).update(5)
