@@ -53,7 +53,7 @@ Reinforcement learning is a paradigm in machine learning where an agent learns o
   //   edge((0,2.3), "ll,uu,rr", "-}>", [state], label-pos: 0.52, label-side: center),
   //   edge((0,1.7), "l,u,r", "-}>", [reward], label-pos: 0.5, label-side: center),
   // ),
-  image("images/single-agent_rl.png", height: 130pt),
+  image("images/single-agent_rl.png", height: 120pt),
   caption: [Schematic of single-agent reinforcement learning.],
 ) <single_agent_rl>
 
@@ -65,18 +65,20 @@ where $gamma in [0, 1]$ is a discount factor that determines how much importance
 Further to the design task, the idea that an individual gate electrode acts as an agent in the QD forming task makes reinforcement learning particularly enticing. A problem that arises is that the actual design task involves more than one gate electrode, otherwise practical QDs cannot be formed; it is a multi-agent setting in which the model of reinforcement learning in @single_agent_rl cannot be directly applied. Rather, the multi-agent reinforcement learning (MARL) model in @multi_agent_rl should be used to learn optimal policies for a set of agents in such settings @mal.
 
 #figure(
-  image("images/marl.png", height: 230pt),
+  image("images/marl.png", height: 210pt),
   caption: [Schematic of multi-agent reinforcement learning.],
 ) <multi_agent_rl>
 
 @multi_agent_rl highlights the differences of this model, notably the joint action that is a combination of the individual actions by different agents, and the separate observation-reward pairs that inform each agent of its next best action @marl. In the context of the layout design problem, applying MARL effectively decomposes the problem of learning an overall layout into smaller problems of each gate electrode learning its own optimal strategy for QD formation. However, choosing MARL only provides a general direction to a potential solution; more details are required to define an exact approach.
 
-Game models under MARL can be organised hierarchically based on the number of agents, the number of states present, and the level of observability for these states by every agent as demonstrated in @game_models @marl. The layout design problem can be described as having $n$ agents (gate electrodes) and $m$ states (potential map), each state fully observable by all agents, thereby fitting the #emph[stochastic game] model's description. As such, MARL algorithms implemented in this thesis would rely on the stochastic game model as foundation.
+To do this, it is useful to consider the types of #emph[game models] that reinforcement learning problems can be classified into. These game models can be organised hierarchically based on the number of agents, the number of states present, and the level of observability for these states by every agent as demonstrated in @game_models @marl. The layout design problem can be described as having $n$ agents (gate electrodes) and $m$ states (potential map), each state fully observable by all agents, thereby fitting the #emph[stochastic game] model's description. As such, MARL algorithms implemented in this thesis would rely on the assumptions inherent in stochastic game models.
 
 #figure(
-  image("images/marl_hierarchy.png", height: 230pt),
+  image("images/marl_hierarchy.png", height: 200pt),
   caption: [Hierarchy of game models.],
 ) <game_models>
+
+=== Stochastic Games
 
 
 
