@@ -115,3 +115,17 @@ mal:
     serial-number:
         doi: "10.48550/arXiv.1907.09189"
     date: 2019
+    parent:
+        title: Proceedings of the 11th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2012)
+
+stochastic-games:
+    type: Article
+    title: Stochastic Games
+    author: L. S. Shapley
+    serial-number:
+        doi: "10.1073/pnas.39.10.1095"
+    date: 1953-10
+    parent:
+        title: Proceedings of National Academy of Sciences of the United States of America
+        volume: 39
+        issue: 10
