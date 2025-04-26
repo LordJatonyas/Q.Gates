@@ -129,3 +129,15 @@ stochastic-games:
         title: Proceedings of National Academy of Sciences of the United States of America
         volume: 39
         issue: 10
+
+maddpg:
+    type: Article
+    title: Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments
+    author: ["Lowe, Ryan", "Wu, Yi", "Tamar, Aviv", "Harb, Jean", "Abbeel, Pieter", "Mordatch, Igor"]
+    serial-number:
+        doi: "10.48550/arXiv.1706.02275"
+    page-range: 6380-6391
+    date: 2017-12
+    parent:
+        title: Advances in Neural Information Processing Systems
+        volume: 30
