@@ -44,10 +44,10 @@
 #include "introduction.typ" // 1 - 2 pages
 #include "lit-review.typ" // 12 - 14 pages
 #include "methodology.typ" // 12 - 15 pages
-#include "simulations.typ" // 8 - 10 pages
+#include "results.typ" // 8 - 10 pages
 #include "discussion.typ" // 6 - 8 pages
 #include "conclusion.typ" // 2 - 3 pages
 
 #pagebreak()
-#counter(heading).update(5)
+#counter(heading).update(7)
 #bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers")
