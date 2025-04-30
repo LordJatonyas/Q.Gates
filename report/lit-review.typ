@@ -34,11 +34,11 @@ This model can be extended to architectures that capture more qubits, such as th
 
 == Gate Electrodes
 === Architecture
-The total electrostatic potential in the 2-dimensional electron gas (2DEG) (the layer on which layout suggestions are to be made) is considered as the sum of components:
+The total electrostatic potential for every point in the 2-dimensional electron gas (2DEG) (the layer on which layout suggestions are to be made) is considered as the sum of components:
 
 $ phi_(t o t) (r) = phi_g (r)  + phi_d (r) + phi_s (r) + phi_e (r) $
 
-where the electrostatic potential contributions are $phi_g$ from the gate electrodes following the pinned surface model, $phi_d$ from the randomly located donor ions, $phi_s$ from the surface states, and $phi_e$ from the presence of electrons in the 2-dimensional electron gas.
+where the electrostatic potential contributions are $phi_g$ from the gate electrodes following the pinned surface model, $phi_d$ from the randomly located donor ions, $phi_s$ from the surface states, and $phi_e$ from the presence of electrons in the 2-dimensional electron gas, and every term is a function of the radius $r$.
 
 
 === Fabrication
