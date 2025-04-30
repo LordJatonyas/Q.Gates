@@ -1,7 +1,7 @@
 #import "@preview/physica:0.9.4": ket
 
 = Introduction
-The introduction of the qubit made possible solutions to intractable problems in classical computation @qubits. Unlike a classical binary bit, a qubit $ket(psi)$ can be described by a linear combination of two orthogonal vectors $ket(0) = vec(1, 0)$ and $ket(1) = vec(0, 1)$:
+The introduction of the qubit made possible solutions to intractable problems in classical computation @qubits. Unlike a classical binary bit, a qubit $ket(psi)$ can be described using the Bloch Sphere through a linear combination of two orthogonal vectors $ket(0) = vec(1, 0)$ and $ket(1) = vec(0, 1)$:
 
 $ ket(psi) = alpha ket(0) + beta ket(1) $ <qubit-eqn>
 
