@@ -97,8 +97,6 @@ sutton_barto:
     title: "Reinforcement Learning: An Introduction"
     author: ["Sutton, R. S.", "Barto, A. G."]
     date: 2018
-    publisher: A Bradford Book
-    location: Cambridge, MA, USA
 
 marl:
     type: Book
@@ -141,3 +139,97 @@ maddpg:
     parent:
         title: Advances in Neural Information Processing Systems
         volume: 30
+
+low-dimen_semioconductors:
+    type: Book
+    title: The Physics of Low-Dimensional Semiconductors
+    author: John H. Davies
+    date: 1998
+    publisher: Cambridge University Press
+    location: New York, NY, USA
+
+quantum_computing_circuits_devices:
+    type: Book
+    title: Quantum Computing Circuits and Devices
+    author: ["Humble, Travis", "Thapliyal, Himanshu", "Munoz-Coreas, Edgard", "Mohiyaddin, Fahd", "Bennink, Ryan"]
+    serial-number:
+        doi: "10.48550/arXiv.1804.10648"
+    date: 2018
+
+threshold_voltage:
+    type: Article
+    title: Control of threshold voltages in Si/SiGe quantum devices via optical illumination
+    author: ["Wolfe, M.", "Coe, Brighton", "Edwards, Justin", "Kovach, Tyler", "McJunkin, Thomas", "Harpt, Benjamin", "Savage, D.", "Lagally, M.", "McDermott, R.", "Friesen, Mark", "Kolkowitz, Shimon", "Eriksson, M."]
+    serial-number:
+        doi: "10.1103/PhysRevApplied.22.034044"
+    page-range: 34-44
+    date: 2024-09
+    parent:
+        title: Phys. Rev. Appl.
+        volume: 22
+        issue: 3
+
+uniformity_control:
+    type: Article
+    title: Electrical Control of Uniformity in Quantum Dot Devices
+    author: ["Meyer, Marcel", "Deprez, Corentin", "van Abswoude, Timo", "Meijer, Ilja", "Liu, Dingshan", "Wang, Chien-An", "Karwal, Saurabh", "Oosterhout, Stefan", "Borsoi, Francesco", "Sammak, Amir", "Hendrickx, Nico", "Scappucci, Giordano", "Veldhorst, Menno"]
+    serial-number:
+        doi: "10.1021/acs.nanolett.2c04446"
+    page-range: 2522-2529
+    date: 2023-03
+    parent:
+        title: American Chemical Society
+        volume: 23
+        issue: 7
+
+dot-arrays_sige:
+    type: Article
+    title: Quantum dot arrays in silicon and germanium
+    author: ["Lawrie, W.", "Eenink, H.", "Hendrickx, N.", "Boter, H.", "Petit, L.", "Amitonov, S.", "Lodari, M.", "Paquelet Wuetz, B.", "Volk, C.", "Philips, S.", "Droulers, G.", "Kalhor, N.", "van Riggelen, F.", "Brousse, D.", "Sammak, A.", "Vandersypen, L.", "Scappucci, G.", "Veldhorst, M."]
+    serial-number:
+        doi: "10.1063/5.0002013"
+    date: 2020-02
+    parent:
+        title: Applied Physics Letters
+        volume: 116
+        issue: 8
+
+ppo:
+    type: Article
+    title: Proximal Policy Optimization Algorithms
+    author: ["Schulman, John", "Wolski, Filip", "Dhariwal, Prafulla", "Radford, Alec", "Klimov, Oleg"]
+    serial-number:
+        doi: "10.48550/arXiv.1707.06347"
+    date: 2017-07
+    parent:
+        title: arXiv
+
+mappo: 
+    type: Article
+    title: The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games
+    author: ["Yu, Chao", "Velu, Akash", "Vinitsky, Eugene", "Gao, Jiaxuan", "Wang, Yu", "Bayen, Alexandre", "Wu, Yi"]
+    serial-number:
+        doi: "10.48550/arXiv.2103.01955"
+    date: 2021-03
+    parent:
+        title: arXiv
+
+popart:
+    type: Article
+    title: Learning values across many orders of magnitude
+    author: ["van Hasselt, Hado", "Guez, Arthur", "Hessel, Matteo", "Mnih, Volodymyr", "Silver, David"]
+    serial-number:
+        doi: "10.48550/arXiv.1602.07714"
+    date: 2016-08
+    parent:
+        title: arXiv
+
+dqn:
+    type: Article
+    title: Playing Atari with Deep Reinforcement Learning
+    author: ["Mnih, Volodymyr", "Kavukcuoglu, Koray", "Silver, David", "Graves, Alex", "Antonoglou, Ioannis", "Wierstra, Daan", "Riedmiller, Martin"]
+    serial-number:
+        doi: "10.48550/arXiv.1312.5602"
+    date: 2013-12
+    parent:
+        title: arXiv

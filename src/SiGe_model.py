@@ -659,7 +659,7 @@ class potential_path():
             # Dot occupation
             occupation = self.get_occupation(low_res_scr_pot)
             """
-            plot_density(np.flipud(carrier_den[5:-5,5:-5]), "-", )
+            plot_density(np.flipud(carrier_den[5:-5,5:-5]), "Initial Hole Density Map", )
 
             self.information = False
             if self.information==True:
@@ -732,19 +732,18 @@ def plot_density(img, title, save=None, mV=False, show=True):
     col = ['#1BE7D0', '#e635f9', '#DFFF00', '#EFFFFE']
     cmap = plt.get_cmap("jet", 30)
     im_ratio = img.shape[0] / img.shape[1]
-    plt.style.use("dark_background")
     im = plt.imshow(img, cmap=cmap, extent=(0, img.shape[1], 0, img.shape[0]), interpolation='none')
     
-    plt.title(title, fontsize=14, color=col[0])
-    plt.xlabel("x [px]", fontsize=14, color=col[0])
-    plt.ylabel("y [px]", fontsize=14, color=col[1])
+    plt.title(title, fontsize=14)
+    plt.xlabel("x [px]", fontsize=14)
+    plt.ylabel("y [px]", fontsize=14)
     
     im.axes.spines.left.set_color(col[1])
     im.axes.spines.right.set_color(col[1])
     im.axes.spines.top.set_color(col[0])
     im.axes.spines.bottom.set_color(col[0])
-    im.axes.tick_params(axis="x", color=col[0], labelcolor=col[0])
-    im.axes.tick_params(axis="y", color=col[1], labelcolor=col[1])
+    im.axes.tick_params(axis="x")
+    im.axes.tick_params(axis="y")
     
     min_val = np.amin(img)
     max_val = np.amax(img)
@@ -760,12 +759,10 @@ def plot_density(img, title, save=None, mV=False, show=True):
     #ticks = np.append(ticks, max_val)
     
     cb = plt.colorbar(im, fraction=0.047 * im_ratio, ticks=ticks, orientation="vertical", format=OOMFormatter(15))
-    cb.ax.yaxis.set_tick_params(color=col[2])
-    cb.ax.yaxis.get_offset_text().set_color(col[2])
-    cb.outline.set_edgecolor(color=col[2])
-    plt.setp(plt.getp(cb.ax.axes, 'yticklabels'), color=col[2])
     
-    cb.ax.set_ylabel("Hole density ["+r'$m^{-2}$' "]",fontsize=14,color=col[2])
+    plt.setp(plt.getp(cb.ax.axes, 'yticklabels'))
+    
+    cb.ax.set_ylabel("Hole density ["+r'$m^{-2}$' "]",fontsize=14)
     if save != None:
         plt.savefig(save, bbox_inches='tight', transparent=True, facecolor="black")
     if show:
@@ -824,13 +821,14 @@ def load_gates():
     img3 = np.where(imread(SEM+"gate_2.png")[:,:,3] > 50, 255, 0)
     img4 = np.where(imread(SEM+"gate_3.png")[:,:,3] > 50, 255, 0)
     img5 = np.where(imread(SEM+"gate_4.png")[:,:,3] > 50, 255, 0)
-    img6 = np.where(imread(SEM+"gate_5.png")[:,:,3] > 50, 255, 0)
-    img7 = np.where(imread(SEM+"gate_6.png")[:,:,3] > 50, 255, 0)
-    img8 = np.where(imread(SEM+"gate_7.png")[:,:,3] > 50, 255, 0)
-    img9 = np.where(imread(SEM+"gate_8.png")[:,:,3] > 50, 255, 0)
-    img10 = np.where(imread(SEM+"gate_9.png")[:,:,3] > 50, 255, 0)
+    #img6 = np.where(imread(SEM+"gate_5.png")[:,:,3] > 50, 255, 0)
+    #img7 = np.where(imread(SEM+"gate_6.png")[:,:,3] > 50, 255, 0)
+    #img8 = np.where(imread(SEM+"gate_7.png")[:,:,3] > 50, 255, 0)
+    #img9 = np.where(imread(SEM+"gate_8.png")[:,:,3] > 50, 255, 0)
+    #img10 = np.where(imread(SEM+"gate_9.png")[:,:,3] > 50, 255, 0)
 
-    gates_design = np.array([img1, img2, img3, img4, img5, img6, img7, img8, img9, img10])
+    #gates_design = np.array([img1, img2, img3, img4, img5, img6, img7, img8, img9, img10])
+    gates_design = np.array([img1, img2, img3, img4, img5])
 
     lx = gates_design.shape[1]
     ly = gates_design.shape[2]
@@ -907,7 +905,8 @@ if __name__ == '__main__':
     gates = load_gates()
     t1 = time.time()
     #preprocess_new(gates)
-    voltages = np.array([4000,2000,1800,1800,4000,1550,4000,1500,3100,1250])
+    #voltages = np.array([4000,2000,1800,1800,4000,1550,4000,1500,3100,1250])
+    voltages = np.array([4000,4000,3000,3000,3000])
     get_physical_density(gates,voltages)
     pot_time = time.time() - t1
     

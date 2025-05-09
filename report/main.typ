@@ -10,23 +10,34 @@
   #it.body
 ]
 
-// Figure captions
+// Figure
 #show figure.caption: it => {
   set par(justify: true)
   it
 }
+#show figure: it => [
+  #set par(leading: 1em)
+  #it
+]
+#set table(inset: 8pt)
+#show figure.where(kind : table): set figure.caption(position: top)
+#show figure.where(kind : "algorithm"): set figure.caption(position: top)
 
 // Preface (Abstract + Acknowledgements)
 #set page(numbering: "i")
 #counter(page).update(1)
 #include "abstract.typ"
-#include "acknowledgements.typ"
+//#include "acknowledgements.typ"
 
 #outline(indent: auto, depth: 2)
 #pagebreak()
 #outline(
   title: [List of Figures],
-  target: figure,
+  target: figure.where(kind: image),
+)
+#outline(
+  title: [List of Tables],
+  target: figure.where(kind: table),
 )
 
 #set heading(numbering: "1.1")
@@ -41,13 +52,13 @@
 
 
 
-#include "introduction.typ" // 1 - 2 pages
-#include "lit-review.typ" // 12 - 14 pages
-#include "methodology.typ" // 12 - 15 pages
-#include "results.typ" // 8 - 10 pages
-#include "discussion.typ" // 6 - 8 pages
-#include "conclusion.typ" // 2 - 3 pages
+#include "introduction.typ" // 2 pages
+#include "lit-review.typ" // 12 pages
+#include "methodology.typ" // 13 pages
+#include "results.typ" // 6 pages
+#include "discussion.typ" // 5 pages
+#include "conclusion.typ" // 6 pages (add economic analysis here)
 
 #pagebreak()
 #counter(heading).update(7)
-#bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers")
+#bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers") // 5 pages
