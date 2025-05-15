@@ -747,6 +747,9 @@ def plot_density(img, title, save=None, mV=False, show=True):
     
     min_val = np.amin(img)
     max_val = np.amax(img)
+
+    print(max_val)
+    print(img.shape[0], img.shape[1])
     """
     if not mV:
         ticks = np.array([0.0,2*10**15,4*10**15,6*10**15,8*10**15,10*10**15,12*10**15,max_val])

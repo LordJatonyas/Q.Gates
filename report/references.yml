@@ -233,3 +233,57 @@ dqn:
     date: 2013-12
     parent:
         title: arXiv
+
+electrometer:
+    type: Article
+    title: Single-Electron Transport and Detection of Graphene Quantum Dots
+    author: ["Li, Xinxing", "Sui, Jinggao", "Fang, Jingyue"]
+    serial-number:
+        doi: "10.3390/nano13050889"
+    date: 2023-02
+    parent:
+        title: Nanomaterials
+        volume: 13
+        issue: 5
+
+quantum_computing_market:
+    type: Article
+    title: Quantum Computing Market Size, Industry Report, 2030
+    author: Grand View Research
+    date: 2024
+
+google_willow:
+    type: Article
+    title: Quantum error correction below the surface code threshold
+    author: Google Quantum AI and Collaborators
+    serial-number:
+        doi: "10.1038/s41586-024-08449-y"
+    date: 2024-12
+    page-range: 920-926
+    parent:
+        title: Nature
+        volume: 638
+
+ionq_processor:
+    type: Article
+    title: Benchmarking an 11-qubit quantum computer
+    author: ["Wright, K.", "Beck, K.", "Debnath, S.", "Amini, J.", "Nam, Y.", "Grzesiak, N.", "Chen, J.", "Pisenti, N.", "Chmielewski, M.", "Collins, C.", "Hudek, K.", "Mizrahi, J.", "Wong-Campos, J.", "Allen, S.", "Apisdorf, J.", "Solomon, P.", "Williams, M.", "Ducore, A.", "Blinov, A.", "Kreikemeier, S.", "Chaplin, V.", "Keesan, M.", "Monroe, C.", "Kim, J."]
+    serial-number:
+        doi: "10.1038/s41467-019-13534-2"
+    date: 2019-11
+    parent:
+        title: Nature Communications
+        volume: 10
+
+intel_tunnel_falls:
+    type: Article
+    title: 12-spin-qubit arrays fabricated on a 300mm semiconductor manufacturing line
+    author: ["George, Hubert", "Madzik, Mateusz", "Henry, Eric", "Wagner, Andrew", "Islam, Mohammad", "Borjans, Felix", "Connors, Elliot", "Corrigan, J.", "Curry, Matthew", "Harper, Michael", "Keith, Daniel", "Lampert, Lester", "Luthi, Florian", "Mohiyaddin, Fahd", "Murcia, Sandra", "Nair, Rohit", "Nahm, Rambert", "Nethwewala, Aditi", "Neyens, Samuel", "Patra, Bishnu", "Raharjo, Roy", "Rogan, Carly", "Savytskyy, Rostyslav", "Watson, Thomas", "Ziegler, Josh", "Zietz, Otto", "Pellerano, Stefano", "Pillarisetty, Ravi", "Bishop, Nathaniel", "Bojarski, Stephanie", "Roberts, Jeanette", "Clarke, James"]
+    serial-number:
+        doi: "10.1021/acs.nanolett.4c05205"
+    page-range: 793-799
+    date: 2024-12
+    parent:
+        title: ACS Nano
+        volume: 25
+        issue: 2

@@ -88,7 +88,7 @@ The architecture of a QD device in Si/SiGe heterostructures is defined by the sp
 To deal with the capacitive crosstalk between gate electrodes that is not reflected in @qd_network @dot-arrays_sige, practical systems typically require more than just a barrier-plunger-barrier configuration to realise a QD (not always 1:1 correspondence). Ultimately, it is the complex electrostatic interactions among different gate electrodes based on gate potential and gate positioning that define the properties of the QD formed.
 
 
-== Multi-Agent Reinforcement Learning
+== Multi-Agent Reinforcement Learning <marl-lit-review>
 Reinforcement learning is a paradigm in machine learning where an agent learns optimal behaviour through trial-and-error interactions with an environment @sutton_barto. It relies on reward signals and not labelled datasets for learning (unlike supervised learning), and has explicit feedback in the form of rewards, penalties, and predefined goals (unlike unsupervised learning). This paradigm is most suitable for the task of designing optimal gate electrode layouts due to the need for physics-based feedback, but lack of sufficient "correct" and optimal layouts.
 
 #figure(
@@ -137,17 +137,19 @@ $ L(theta) = E[min(r_t (theta) hat(A)_t, c l i p(r_t (theta), 1 - epsilon, 1 + e
 
 where $r_t (theta)$ is the probability ratio of the new policy to the old policy $(pi_theta (a_t | s_t))/(pi_theta_(o l d) (a_t | s_t))$, $hat(A)_t$ is the advantage function at timestep $t$, and $epsilon$ is a hyperparameter that controls the range of allowed policy changes.
 
-Multi-Agent Proximal Policy Optimisation (MAPPO) is an extension of the single-agent Proximal Policy Optimisation (PPO) algorithm tailored for MARL. It trains two separate neural networks: an actor network with parameters $theta$ and a critic network with parameters $phi$ @mappo. A recurrent neural network (RNN) implementation of MAPPO is shown in Algorithm 1, which assumes that all agents share the critic and actor networks. The critic network $V_phi$ maps $S --> RR$ and the actor network $pi_theta$ maps $O --> A$.
+Multi-Agent Proximal Policy Optimisation (MAPPO) is an extension of the single-agent Proximal Policy Optimisation (PPO) algorithm tailored for MARL. It trains two separate neural networks: an actor network with parameters $theta$ and a critic network with parameters $phi$ @mappo. A recurrent neural network (RNN) implementation of MAPPO is shown in @mappo-algorithm, which assumes that all agents share the critic and actor networks. The critic network $V_phi$ maps $S --> RR$ and the actor network $pi_theta$ maps $O --> A$.
 
-#align(center,
+#figure(
+  kind: "algorithm",
+  supplement: [Algorithm],
   pseudocode-list(
     booktabs: true,
-    title: [*Algorithm 1:* Multi-Agent Proximal Policy Optimisation],
+    numbered-title: [*Multi-Agent Proximal Policy Optimisation*],
     line-numbering: none,
     indentation: 2em
   )[
-    + Initialise $theta$ and $phi$
-    + Set learning rate $alpha$
+    + initialise $theta$ and $phi$
+    + set learning rate $alpha$
     + *while* $s t e p <= s t e p_(m a x)$ *do*
       + set data buffer $D = {}$
       + *for* i = 1 to batch_size *do*
@@ -160,18 +162,18 @@ Multi-Agent Proximal Policy Optimisation (MAPPO) is an extension of the single-a
             + $u_t^((a)) ~ p_t^((a))$
             + $v_t^((a)), h_(t, V)^((a)) = V (s_t^((a)), h_(t-1, V)^((a)); phi)$
           + *end for*
-          + Execute actions $u_t$, observe $r_t, s_(t+1), o_(t+1)$
+          + execute actions $u_t$, observe $r_t, s_(t+1), o_(t+1)$
           + $tau <-- tau + [s_t, o_t, h_t^((pi)), h_t^((V)), u_t, r_t, s_(t+1), o_(t+1)]$
         + *end for*
-        + Compute advantage estimate $hat(A)$ via GAE on $tau$, using PopArt
-        + Compute reward-to-go $hat(R)$ on $tau$ and normalize with PopArt
-        + Split trajectory $tau$ into chunks of length $L$
+        + compute advantage estimate $hat(A)$ via GAE on $tau$, using PopArt
+        + compute reward-to-go $hat(R)$ on $tau$ and normalize with PopArt
+        + split trajectory $tau$ into chunks of length $L$
         + *for* $l = 0, 1, ..., T/L$ *do*
           + $D = D union (τ[l : l+T], hat(A)[l : l+L], hat(R)[l : l+L])$
         + *end for*
       + *end for*
       + *for* mini-batch k = 1, ..., $K$ *do*
-        + $b$ ← random mini-batch from $D$ with all agent data
+        + $b <-$ random mini-batch from $D$ with all agent data
         + *for* each data chunk $c$ in mini-batch $b$ *do*
           + update RNN hidden states for $pi$ and $V$ from first hidden state in data chunk
         + *end for*
@@ -180,9 +182,9 @@ Multi-Agent Proximal Policy Optimisation (MAPPO) is an extension of the single-a
       + *end for*
     + *end while*
   ]
-)
+) <mappo-algorithm>
 
-In this algorithm, PopArt is an adaptive normalisation technique to normalise the targets used in the learning updates @popart. Its two main components are:
+In this algorithm, PopArt is an adaptive normalisation technique that is applied to normalise the targets used in the learning updates @popart. Its two main components are:
 - *Adaptively Rescaling Targets (ART)*: to update scale and shift such that the target is appropriately normalised, and
 - *Preserving Outputs Precisely (POP)*: to preserve the outputs of the unnormalised function when changing the scale and shift.
 
@@ -190,38 +192,40 @@ In this algorithm, PopArt is an adaptive normalisation technique to normalise th
 === Deep Q-Networks
 Deep Q-Networks (DQN) are convolutional networks trained using Deep Q-Learning which is an off-policy algorithm that uses a replay buffer to store experiences and use them to update the overall network @dqn.
 
-
-#align(center,
+#figure(
+  kind: "algorithm",
+  supplement: [Algorithm],
   pseudocode-list(
     booktabs: true,
-    title: [*Algorithm 2: Multi-Agent Deep Q Network*],
+    numbered-title: [*Multi-Agent Deep Q Network*],
     line-numbering: none,
     indentation: 2em
   )[
-    + Initialise Q-networks $theta_i$ for each agent $i$
-    + Initialise target Q-networks $theta_i ' <- theta_i$ for each agent $i$
-    + Initialise replay buffer $D$
-    + *for* episode = 1 to $M$ *do*
-      + Initialise environment and receive initial state $s_1$
+    + initialise Q-networks $theta_i$ for each agent $i$
+    + initialise target Q-networks $theta_i ' <- theta_i$ for each agent $i$
+    + initialise replay buffer $D$
+    + *while* $s t e p <= s t e p_(m a x)$ *do*
+      + initialise replay buffer $D = {}$
+      + initialise environment and receive initial state $s_1$
       + *for* t = 1 to max_episode_length *do*
         + *for* each agent $i$ *do*
-          + Select action $a_i$ using $epsilon$-greedy policy from $Q_i(s, a_i; theta_i)$
+          + select action $a_i$ using $epsilon$-greedy policy from $Q_i (s, a_i; theta_i)$
         + *end for*
-        + Execute joint action $a = (a_1, ..., a_N)$, then observe reward $r$ and the next state $s'$
-        + Store $(s, a, r, s')$ in replay buffer $D$
+        + execute joint action $a = (a_1, ..., a_N)$, then observe reward $r$ and the next state $s'$
+        + $D = D union (s, a, r, s')$
         + $s <- s'$
         + *for* each agent $i$ *do*
-          + Sample random minibatch of transitions $(s, a, r, s′)$ from $D$
-          + Set target $y = r_i + gamma max_(a_i ′) Q_i′(s′, a_i ′; theta_i ′)$
-          + Update θᵢ by minimizing loss: $(y - Q_i (s, a_i; theta_i))^2$
+          + sample random minibatch of transitions $(s, a, r, s′)$ from $D$
+          + set target $y = r_i + gamma max_(a_i ′) Q_i′(s′, a_i ′; theta_i ′)$
+          + update $theta_i$ by minimizing loss: $(y - Q_i (s, a_i; theta_i))^2$
         + *end for*
-        + Every $c$ steps, update target networks: $theta_i ' <- theta_i$ for all $i$
+        + every $c$ steps, update target networks: $theta_i ' <- theta_i$ for all $i$
       + *end for*
-    + *end for*
+    + *end while*
   ]
-)
+) <dqn-algorithm>
 
-Previous work in the Quantum Device Lab (Natalia Ares) has shown that DQN can be used to solve the layout design problem when more complex gate electrode geometries are allowed. This algorithm learnt optimal policies for individual gate electrodes, which then performed the actions of removing/adding rows/columns to form a QD that is closest to the desired shape and position. This thesis aims to extend this work by adapting DQN to the multi-agent setting, and learning an overall optimal policy in a cooperative setting where the goal is to minimise the difference between the desired and actual QD shapes and positions.
+Previous work in the Quantum Device Lab (Natalia Ares) has shown that DQN can be used to solve the layout design problem when more complex gate electrode geometries are allowed. This algorithm learnt optimal policies for individual gate electrodes, which then performed the actions of removing/adding rows/columns to form a QD that is closest to the desired shape and position. This thesis aims to extend this work by adapting DQN to the multi-agent setting shown in Algorithm 2, and learning an overall optimal policy in a cooperative setting where the goal is to minimise the difference between the desired and actual QD shapes and positions.
 
 
 #pagebreak()

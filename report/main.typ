@@ -26,7 +26,7 @@
 // Preface (Abstract + Acknowledgements)
 #set page(numbering: "i")
 #counter(page).update(1)
-#include "abstract.typ"
+//#include "abstract.typ"
 //#include "acknowledgements.typ"
 
 #outline(indent: auto, depth: 2)
@@ -54,11 +54,11 @@
 
 #include "introduction.typ" // 2 pages
 #include "lit-review.typ" // 12 pages
-#include "methodology.typ" // 13 pages
+#include "methodology.typ" // 12 pages
 #include "results.typ" // 6 pages
 #include "discussion.typ" // 5 pages
 #include "conclusion.typ" // 6 pages (add economic analysis here)
 
-#pagebreak()
 #counter(heading).update(7)
 #bibliography("references.yml", style: "institute-of-electrical-and-electronics-engineers") // 5 pages
+
